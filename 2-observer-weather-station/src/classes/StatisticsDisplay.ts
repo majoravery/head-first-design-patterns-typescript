@@ -14,7 +14,7 @@ export class StatisticsDisplay implements Observer, DisplayElement {
     this.temperatures = [];
   }
 
-  update(temperature: number):void {
+  update(temperature: number): void {
     this.temperatures.push(temperature);
     if (!this.max || temperature > this.max) {
       this.max = temperature;
@@ -26,8 +26,10 @@ export class StatisticsDisplay implements Observer, DisplayElement {
   }
 
   display(): void {
-    const avg = this.temperatures.reduce((acc, curr) => acc + curr, 0) / this.temperatures.length;
-    console.log(`Avg/Max/Min: ${avg}/${this.max}/${this.min}`)
+    const avg =
+      this.temperatures.reduce((acc, curr) => acc + curr, 0) /
+      this.temperatures.length;
+    console.log(`Avg/Max/Min: ${avg}/${this.max}/${this.min}`);
   }
 
   teardown(): void {

@@ -12,7 +12,7 @@ class MiniDuckSimulator {
     const model = new ModelDuck();
     model.display();
     model.performFly();
-    model.setFlyBehaviour(new Fly.FlyRocketPowered);
+    model.setFlyBehaviour(new Fly.FlyRocketPowered());
     model.performFly();
   }
 }

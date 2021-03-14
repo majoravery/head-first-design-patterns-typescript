@@ -12,14 +12,16 @@ export class CurrentConditionsDisplay implements Observer, DisplayElement {
     weatherData.registerObserver(this);
   }
 
-  update(temperature: number, humidity: number):void {
+  update(temperature: number, humidity: number): void {
     this.temperature = temperature;
     this.humidity = humidity;
     this.display(); // Might not be the best place to call display(), but will suffice for this example
   }
 
   display(): void {
-    console.log(`Current conditions: ${this.temperature} degrees C and ${this.humidity}% humidity.`)
+    console.log(
+      `Current conditions: ${this.temperature} degrees C and ${this.humidity}% humidity.`
+    );
   }
 
   teardown(): void {

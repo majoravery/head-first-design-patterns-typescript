@@ -4,18 +4,18 @@ export interface QuackBehaviour {
 
 export class Quack implements QuackBehaviour {
   quack(): void {
-    console.log('Quack')
+    console.log('Quack');
   }
 }
 
 export class MuteQuack implements QuackBehaviour {
   quack(): void {
-    console.log('<< Silence >>')
+    console.log('<< Silence >>');
   }
 }
 
 export class Squeak implements QuackBehaviour {
   quack(): void {
-    console.log('Squeak')
+    console.log('Squeak');
   }
 }

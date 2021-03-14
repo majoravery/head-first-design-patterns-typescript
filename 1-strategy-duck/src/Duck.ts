@@ -5,7 +5,10 @@ abstract class Duck {
   private FlyBehaviour: Fly.FlyBehaviour;
   private QuackBehaviour: Quack.QuackBehaviour;
 
-  constructor(flyBehaviour: Fly.FlyBehaviour, quackBehaviour: Quack.QuackBehaviour) {
+  constructor(
+    flyBehaviour: Fly.FlyBehaviour,
+    quackBehaviour: Quack.QuackBehaviour
+  ) {
     this.FlyBehaviour = flyBehaviour;
     this.QuackBehaviour = quackBehaviour;
   }
@@ -29,13 +32,13 @@ abstract class Duck {
   }
 
   public swim(): void {
-    console.log('All ducks float, even decoys!')
+    console.log('All ducks float, even decoys!');
   }
 }
 
 export class MallardDuck extends Duck {
   display(): void {
-    console.log('I\'m a real Mallard duck');
+    console.log("I'm a real Mallard duck");
   }
 }
 
@@ -45,6 +48,6 @@ export class ModelDuck extends Duck {
   }
 
   display(): void {
-    console.log('I\'m a model duck');
+    console.log("I'm a model duck");
   }
 }

@@ -4,18 +4,18 @@ export interface FlyBehaviour {
 
 export class FlyWithWings implements FlyBehaviour {
   fly(): void {
-    console.log('I\'m flying!');
+    console.log("I'm flying!");
   }
 }
 
 export class FlyNoWay implements FlyBehaviour {
   fly(): void {
-    console.log('I can\'t fly');
+    console.log("I can't fly");
   }
 }
 
 export class FlyRocketPowered implements FlyBehaviour {
   fly(): void {
-    console.log('I\'m flying with a rocket!');
+    console.log("I'm flying with a rocket!");
   }
 }

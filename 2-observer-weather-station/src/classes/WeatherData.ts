@@ -23,7 +23,7 @@ export class WeatherData implements Subject {
   public notifyObservers(): void {
     this.observers.forEach((observer: Observer) => {
       observer.update(this.temperature, this.humidity, this.pressure);
-    })
+    });
   }
 
   public getTemperature(): number {
@@ -38,7 +38,11 @@ export class WeatherData implements Subject {
     return this.pressure;
   }
 
-  public setMeasurements(temperature: number, humidity: number, pressure: number): void {
+  public setMeasurements(
+    temperature: number,
+    humidity: number,
+    pressure: number
+  ): void {
     this.temperature = temperature;
     this.humidity = humidity;
     this.pressure = pressure;

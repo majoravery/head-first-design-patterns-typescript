@@ -22,13 +22,13 @@ export class ForecastDisplay implements Observer, DisplayElement {
   display(): void {
     let forecast = '';
     if (this.currentPressure > this.lastPressure) {
-      forecast = 'Improving weather on the way!'
+      forecast = 'Improving weather on the way!';
     } else if (this.currentPressure === this.lastPressure) {
-      forecast = 'More of the same'
+      forecast = 'More of the same';
     } else if (this.currentPressure < this.lastPressure) {
-      forecast = 'Watch out for cooler, rainy weather'
+      forecast = 'Watch out for cooler, rainy weather';
     }
-    console.log(`Forecast: ${forecast}`)
+    console.log(`Forecast: ${forecast}`);
   }
 
   teardown(): void {

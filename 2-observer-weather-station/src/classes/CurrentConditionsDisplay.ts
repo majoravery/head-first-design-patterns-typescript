@@ -8,13 +8,13 @@ export class CurrentConditionsDisplay implements Observer, DisplayElement {
   private humidity!: number;
 
   constructor(weatherData: WeatherData) {
-    this.weatherData = weatherData; // Save reference to unsubscribe with later
+    this.weatherData = weatherData;
     weatherData.registerObserver(this);
   }
 
-  update(temperature: number, humidity: number): void {
-    this.temperature = temperature;
-    this.humidity = humidity;
+  update(): void {
+    this.temperature = this.weatherData.getTemperature();
+    this.humidity = this.weatherData.getHumidity();
     this.display(); // Might not be the best place to call display(), but will suffice for this example
   }
 

@@ -9,12 +9,13 @@ export class StatisticsDisplay implements Observer, DisplayElement {
   private min!: number;
 
   constructor(weatherData: WeatherData) {
-    this.weatherData = weatherData; // Save reference to unsubscribe with later
+    this.weatherData = weatherData;
     weatherData.registerObserver(this);
     this.temperatures = [];
   }
 
-  update(temperature: number): void {
+  update(): void {
+    const temperature = this.weatherData.getTemperature();
     this.temperatures.push(temperature);
     if (!this.max || temperature > this.max) {
       this.max = temperature;

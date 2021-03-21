@@ -22,7 +22,7 @@ export class WeatherData implements Subject {
 
   public notifyObservers(): void {
     this.observers.forEach((observer: Observer) => {
-      observer.update(this.temperature, this.humidity, this.pressure);
+      observer.update();
     });
   }
 

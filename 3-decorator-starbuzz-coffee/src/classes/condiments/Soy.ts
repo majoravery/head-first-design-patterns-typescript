@@ -1,4 +1,4 @@
-import { Beverage } from '../../interfaces/Beverage';
+import { Beverage, Size } from '../../interfaces/Beverage';
 import { CondimentDecorator } from '../../interfaces/CondimentDecorator';
 
 export class Soy extends CondimentDecorator {
@@ -12,6 +12,19 @@ export class Soy extends CondimentDecorator {
   }
 
   cost(): number {
-    return this.beverage.cost() + 0.1;
+    let condimentCost = 0.1;
+    switch (this.beverage.getSize()) {
+      case Size.Tall:
+        condimentCost = 0.1;
+        break;
+      case Size.Venti:
+        condimentCost = 0.15;
+        break;
+      case Size.Grande:
+        condimentCost = 0.2;
+        break;
+    }
+
+    return this.beverage.cost() + condimentCost;
   }
 }

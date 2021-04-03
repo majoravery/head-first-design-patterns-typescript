@@ -1,3 +1,4 @@
+import { Size } from './interfaces/Beverage';
 import { DarkRoast } from './classes/beverages/DarkRoast';
 // import { Decaf } from './classes/beverages/Decaf';
 import { Espresso } from './classes/beverages/Espresso';
@@ -23,6 +24,11 @@ class StarbuzzCoffee {
     beverage3 = new Mocha(beverage3);
     beverage3 = new Whip(beverage3);
     console.log(`${beverage3.getDescription()} ${beverage3.cost()}`);
+
+    let beverage4 = new HouseBlend();
+    beverage4.setSize(Size.Grande);
+    beverage4 = new Soy(beverage4);
+    console.log(`${beverage4.getDescription()} ${beverage4.cost()}`);
   }
 }
 

@@ -12,7 +12,7 @@ class PizzaTestDrive {
     console.log('\n');
 
     const joelPizza = chicagoStore.orderPizza('pepperoni');
-    console.log('Ethan ordered a', joelPizza.getName());
+    console.log('Joel ordered a', joelPizza.getName());
   }
 }
 

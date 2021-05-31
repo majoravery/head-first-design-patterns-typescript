@@ -73,7 +73,6 @@ class RemoteLoader {
   }
 }
 
-// TODO: Quite unsure about the suggested undo implementation of ceiling fan though
 class RemoteLoaderFanSpeed {
   constructor() {
     const remoteControl: RemoteControl = new RemoteControl(3);
@@ -157,5 +156,5 @@ class RemoteLoaderPartyMode {
 }
 
 // new RemoteLoader();
-// new RemoteLoaderFanSpeed();
-new RemoteLoaderPartyMode();
+new RemoteLoaderFanSpeed();
+// new RemoteLoaderPartyMode();

@@ -1,9 +1,9 @@
 import { Command } from '../interfaces/Command';
-import { CeilingFan } from './CeilingFan';
+import { CeilingFan, ceilingFanSpeeds } from './CeilingFan';
 
 export class CeilingFanLowCommand implements Command {
   protected ceilingFan: CeilingFan;
-  protected previousState: number = CeilingFan.OFF;
+  protected previousState: ceilingFanSpeeds = CeilingFan.OFF;
 
   constructor(ceilingFan: CeilingFan) {
     this.ceilingFan = ceilingFan;
@@ -15,15 +15,6 @@ export class CeilingFanLowCommand implements Command {
   }
 
   undo(): void {
-    switch (this.previousState) {
-      case CeilingFan.LOW:
-        return this.ceilingFan.low();
-      case CeilingFan.MEDIUM:
-        return this.ceilingFan.medium();
-      case CeilingFan.HIGH:
-        return this.ceilingFan.high();
-      case CeilingFan.OFF:
-        return this.ceilingFan.off();
-    }
+    this.ceilingFan.setSpeed(this.previousState);
   }
 }

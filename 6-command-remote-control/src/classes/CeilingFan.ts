@@ -1,10 +1,12 @@
+export type ceilingFanSpeeds = 0 | 1 | 2 | 3;
+
 export class CeilingFan {
-  public static HIGH = 3;
-  public static MEDIUM = 2;
-  public static LOW = 1;
-  public static OFF = 0;
+  public static HIGH: 3 = 3;
+  public static MEDIUM: 2 = 2;
+  public static LOW: 1 = 1;
+  public static OFF: 0 = 0;
   protected location!: string;
-  protected speed!: number;
+  protected speed!: ceilingFanSpeeds;
 
   constructor(location: string) {
     this.location = location;
@@ -28,10 +30,27 @@ export class CeilingFan {
 
   off(): void {
     this.speed = CeilingFan.OFF;
-    console.log(`${this.location} Ceiling Fan is on off`);
+    console.log(`${this.location} Ceiling Fan is off`);
   }
 
-  getSpeed(): number {
+  getSpeed(): ceilingFanSpeeds {
     return this.speed;
+  }
+
+  setSpeed(speed: ceilingFanSpeeds): void {
+    switch (speed) {
+      case CeilingFan.LOW:
+        this.low();
+        break;
+      case CeilingFan.MEDIUM:
+        this.medium();
+        break;
+      case CeilingFan.HIGH:
+        this.high();
+        break;
+      case CeilingFan.OFF:
+        this.off();
+        break;
+    }
   }
 }
